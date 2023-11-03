@@ -1,6 +1,7 @@
 import { RouterProvider } from "react-router-dom";
 import ProviderLayout from "./ProviderLayout";
 import { Router } from "./router";
+import "@mantine/core/styles.css";
 import "./App.css";
 
 function App() {

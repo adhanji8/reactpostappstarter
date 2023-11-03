@@ -1,8 +1,17 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useBoundStore from "../../store/Store";
+import {
+  TextInput,
+  PasswordInput,
+  Paper,
+  Title,
+  Container,
+  Button,
+} from '@mantine/core';
+import classes from './Login.module.css';
 
-const LoginPage = () => {
+export function LoginPage() {
   const navigate = useNavigate();
   const { loginService, authLoading, user } = useBoundStore((state) => state);
 
@@ -19,40 +28,22 @@ const LoginPage = () => {
     if (!email || !password) return;
     loginService(email, password);
   };
+
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
-      <form onSubmit={onLogin}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gridGap: "20px",
-            background: "#d3d3d3",
-            padding: "50px",
-          }}
-        >
-          <h1>This is the login page</h1>
-          <input
-            placeholder="email"
-            name="email"
-            type="email"
-            required
-            style={{ minWidth: "320px", height: "26px" }}
-          />
-          <input
-            placeholder="password"
-            name="password"
-            type="password"
-            required
-            style={{ minWidth: "320px", height: "26px" }}
-          />
-          <button type="submit">login</button>
+    <Container size={420} my={40}>
+      <Title ta="center" className={classes.title}>Log In</Title>
+      <Paper withBorder shadow="md" p={30} mt={30} radius="md">
+        <form onSubmit={onLogin}>
+          <TextInput name="email" label="Email" placeholder="Email" required />
+          <PasswordInput name="password" label="Password" placeholder="Password" required mt="md" />
+          <Button type="submit" mt="xl">
+            Log in
+          </Button>
           {authLoading ? <h2>Loading...</h2> : null}
-        </div>
-      </form>
-    </div>
+        </form>
+      </Paper>
+    </Container>
   );
-};
+}
 
 export default LoginPage;

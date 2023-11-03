@@ -1,4 +1,4 @@
-import { TextInput, Button, Group, Box } from "@mantine/core";
+import { Title, TextInput, Button, Group, Box } from "@mantine/core";
 import DOMAIN from "../../services/endpoint";
 import axios from "axios";
 import { useForm } from "@mantine/form";
@@ -23,7 +23,9 @@ function CreatePostPage() {
   };
 
   return (
-    <Box maw={300} mx="auto">
+    <>
+    <Title ta="center">New Post</Title>
+    <Box maw={300} mx="auto" style={{marginTop: "calc(1.875rem * var(--mantine-scale))"}}>
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <TextInput
           label="Title"
@@ -53,6 +55,7 @@ function CreatePostPage() {
         </Group>
       </form>
     </Box>
+    </>
   );
 }
 
