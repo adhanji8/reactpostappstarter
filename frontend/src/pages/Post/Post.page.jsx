@@ -1,8 +1,8 @@
-import DOMAIN from "../../services/endpoint";
-import axios from "axios";
-import { ArticleCardImage } from "../../components/misc/ArticleCardImage";
-import { SimpleGrid, Container } from "@mantine/core";
 import { useLoaderData } from "react-router-dom";
+import axios from "axios";
+import { SimpleGrid, Container } from "@mantine/core";
+import { ArticleCardImage } from "../../components/misc/ArticleCardImage";
+import DOMAIN from "../../services/endpoint";
 
 export const PostPage = () => {
   const posts = useLoaderData();

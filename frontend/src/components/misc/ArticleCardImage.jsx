@@ -11,13 +11,13 @@ export function ArticleCardImage({ title, category, image, id }) {
       style={{ backgroundImage: `url(${image})` }}
       className={classes.card}
     >
-      <div>
-        <Text className={classes.category} size="xs">
-          {category}
-        </Text>
+      <div className={classes.content}>
         <Title order={3} className={classes.title}>
           {title}
         </Title>
+        <Text className={classes.category} size="xs">
+          {category}
+        </Text>
       </div>
       <Button variant="white" color="dark">
         <Link to={id.toString()}>View</Link>

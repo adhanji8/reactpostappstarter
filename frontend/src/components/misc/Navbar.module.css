@@ -32,6 +32,11 @@
   }
 }
 
+.logo {
+  color: var(--mantine-color-blue-filled);
+  font-weight: bold;
+}
+
 .theme {
   align-items: center;
   background-color: transparent;

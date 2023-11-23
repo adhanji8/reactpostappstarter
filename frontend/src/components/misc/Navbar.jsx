@@ -30,7 +30,7 @@ export function Navbar() {
     <header className={classes.header}>
       <Container size="md" className={classes.inner}>
         <NavLink to="/">
-          <div className={classes.logo}>LOGO</div>
+          <div className={classes.logo}>COMP 3013</div>
         </NavLink>
         <Group gap={5} visibleFrom="xs">
           {!!user && (
