@@ -1,33 +1,31 @@
-import { ColorSchemeProvider, MantineProvider } from "@mantine/core";
-import { useHotkeys, useLocalStorage } from "@mantine/hooks";
+import {
+  DEFAULT_THEME,
+  mergeMantineTheme,
+  MantineProvider,
+  createTheme,
+  rem,
+} from "@mantine/core";
+
+const themeOverride = createTheme({
+  spacing: {
+    xs: rem(4),
+    sm: rem(8),
+    md: rem(16),
+    lg: rem(24),
+    xl: rem(32),
+  },
+  titleFontSize: rem(32),
+  cardHeight: rem(440),
+});
+
+const theme = mergeMantineTheme(DEFAULT_THEME, themeOverride);
 
 export default ({ children }) => {
-  const [colorScheme, setColorScheme] = useLocalStorage({
-    key: "mantine-color-scheme",
-    defaultValue: "light",
-    getInitialValueInEffect: true,
-  });
-
-  useHotkeys([["mod+J", () => toggleColorScheme()]]);
-
-  const toggleColorScheme = (value) => {
-    setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
-  };
-
   return (
     <>
-      <ColorSchemeProvider
-        colorScheme={colorScheme}
-        toggleColorScheme={toggleColorScheme}
-      >
-        <MantineProvider
-          theme={{ colorScheme }}
-          withGlobalStyles
-          withNormalizeCSS
-        >
-          {children}
-        </MantineProvider>
-      </ColorSchemeProvider>
+      <MantineProvider theme={theme} withGlobalStyles withNormalizeCSS>
+        {children}
+      </MantineProvider>
     </>
   );
 };

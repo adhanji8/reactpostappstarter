@@ -3,6 +3,7 @@ import LoginPage from "./pages/Auth/Login.page";
 import Landing from "./pages/Landing/Landing.page";
 import NotFound from "./pages/Notfound/NotFound.page";
 import CreatePostPage from "./pages/Post/CreatePost.page";
+import UpdatePostPage from "./pages/Post/UpdatePost.page";
 import ProtectedRoute from "./services/ProtectedRoute";
 import useBoundStore from "./store/Store";
 import {
@@ -29,6 +30,7 @@ export const Router = () => {
    * /login - Login Page
    * /posts - See All Posts
    * /posts/:id - See details of a specific post
+   * /posts/:id/edit - Update a post
    * /posts/create - Create a post
    *
    * /<unknown> - 404 Not Found
@@ -51,6 +53,15 @@ export const Router = () => {
           element={
             <ProtectedRoute isAllowed={!!authCheck}>
               <PostDetailsPage />
+            </ProtectedRoute>
+          }
+          loader={postDetailsLoader}
+        />
+        <Route
+          path="/posts/:id/edit"
+          element={
+            <ProtectedRoute isAllowed={!!authCheck}>
+              <UpdatePostPage />
             </ProtectedRoute>
           }
           loader={postDetailsLoader}

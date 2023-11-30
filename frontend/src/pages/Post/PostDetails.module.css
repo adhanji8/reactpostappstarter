@@ -1,0 +1,48 @@
+.post {
+  display: flex;
+  flex-direction: column;
+}
+
+.post__category {
+  order: 1;
+}
+
+.post__category,
+.post__user {
+  color: var(--mantine-white);
+  opacity: 0.7;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.post__content {
+  order: 2;
+}
+
+.post__content button a {
+  color: #fff;
+}
+
+.post__content p {
+  margin: 1em 0;
+}
+
+.post__image img {
+  border-radius: var(--paper-radius,var(--mantine-radius-default));
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.post__title {
+  font-family: var(--mantine-font-family);
+  font-weight: 900;
+  line-height: 1.2;
+  font-size: 16px;
+  margin-top: var(--mantine-spacing-xs);
+  order: 2;
+}
+
+.post__user {
+  order: 2;
+}

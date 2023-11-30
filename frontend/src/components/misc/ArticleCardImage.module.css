@@ -1,0 +1,40 @@
+.card {
+  height: calc(var(--mantine-card-height) * 2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-size: cover;
+  background-position: center;
+}
+
+.card button {
+  margin-top: 1em;
+}
+
+.card button a {
+  color: inherit;
+}
+
+.title {
+  font-family: var(--mantine-font-family);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.2;
+  font-size: 16px;
+  margin-top: var(--mantine-spacing-xs);
+  order: 2;
+}
+
+.category {
+  color: var(--mantine-white);
+  opacity: 0.7;
+  order: 1;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
