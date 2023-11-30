@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { NavLink } from "react-router-dom";
-import { useMantineColorScheme, Container, Group, Burger } from '@mantine/core';
+import { useMantineColorScheme, ActionIcon, Burger, Container, Group } from '@mantine/core';
 import { useColorScheme, useDisclosure } from '@mantine/hooks';
 import classes from './Navbar.module.css';
 import useBoundStore from "../../store/Store";
@@ -54,17 +54,17 @@ export function Navbar() {
               Log In
             </NavLink>
           )}
-          <button type="button" onClick={toggleColorScheme} className={classes.theme} aria-label={ucfirst(colorScheme + ' mode')}>
+          <ActionIcon size="lg" variant="default" className={classes.theme} onClick={toggleColorScheme} aria-label={ucfirst(colorScheme + ' mode')}>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path>
               <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path>
             </svg>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
             </svg>
-          </button>
+          </ActionIcon>
         </Group>
         <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
       </Container>
