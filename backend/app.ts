@@ -70,7 +70,7 @@ app.post("/api/user/validation", (req, res) => {
 });
 
 app.get("/api/posts", async (req, res) => {
-  await sleep(1000);
+  //await sleep(10000);
   res.json(posts);
 });
 

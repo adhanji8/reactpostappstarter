@@ -34,7 +34,7 @@ const Auth = ({ children }) => {
     handleAuthentication();
   }, []);
 
-  return <div>{tokenLoading ? "Loading..." : children}</div>;
+  return <div className="auth">{tokenLoading ? "Loading..." : children}</div>;
 };
 
 export default Auth;
